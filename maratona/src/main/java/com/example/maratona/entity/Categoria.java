@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Categoria {
 
+public enum Categoria{
+    PEQUENO, MEDIO, AVANCADO
+    }
 
-}
