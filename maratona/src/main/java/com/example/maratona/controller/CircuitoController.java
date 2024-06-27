@@ -18,4 +18,19 @@ public class CircuitoController {
     public Circuito cadastrarCircuito(@RequestBody Circuito circuito){
         return circuitoService.salvarCircuito(circuito);
     }
+
+    @PostMapping("/deletar")
+    public void deletarCircuito(@RequestBody Long id){
+circuitoService.excluirCircuito(id);
+    }
+
+    @PostMapping("/buscar")
+public Circuito buscarCircuito(@RequestBody Long id){
+return circuitoService.buscarCircuito(id);
+    }
+
+    @PostMapping("/atualizar")
+public Circuito atualizarCircuito(@RequestBody Circuito circuito){
+        return circuitoService.atualizarCircuito(circuito);
+    }
 }

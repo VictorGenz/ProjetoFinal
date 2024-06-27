@@ -18,5 +18,18 @@ public class InscricaoController {
     public Inscricao cadastrarInscricao(@RequestBody Inscricao inscricao){
         return incricaoService.salvarInscricao(inscricao);
     }
+    @PostMapping("/excluir")
+    public void excluirInscricao(@RequestBody Long id){
+        incricaoService.excluirInscricao(id);
+    }
+
+    @PostMapping("/buscar")
+    public Inscricao buscarInscricao(@RequestBody Long id){
+        return incricaoService.buscarInscricao(id);
+    }
+    @PostMapping("/atualizar")
+    public Inscricao atualizarInscricao(@RequestBody Inscricao inscricao){
+        return incricaoService.atualizarInscricao(inscricao);
+    }
 
 }

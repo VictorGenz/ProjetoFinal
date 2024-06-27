@@ -16,6 +16,23 @@ public class MaratonaController {
 
     @PostMapping("/cadastrar")
     public Maratona cadastrarMaratona(@RequestBody Maratona maratona){
+
         return maratonaService.salvarMaratona(maratona);
     }
+
+    @PostMapping("/excluir")
+            public void excluirMaratona(@RequestBody Long id){
+        maratonaService.excluirMaratona(id);
+    }
+
+    @PostMapping("/buscar")
+    public Maratona buscarMaratona(@RequestBody Long id){
+        return maratonaService.buscarMaratona(id);
+    }
+
+    @PostMapping("/atualizar")
+    public void atualizarMaratona(@RequestBody Maratona maratona){
+        maratonaService.atualizarMaratona(maratona);
+    }
+
 }

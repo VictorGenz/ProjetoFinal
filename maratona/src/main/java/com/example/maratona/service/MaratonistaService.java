@@ -13,4 +13,14 @@ public class MaratonistaService {
     public Maratonista salvarMaratonista(Maratonista maratonista){
         return maratonistaRepository.save(maratonista);
     }
+    public void excluirMaratonista(Long id){
+        maratonistaRepository.deleteById(id);
+    }
+
+    public Maratonista buscarMaratonista(Long id){
+        return maratonistaRepository.findById(id).orElse(null);
+    }
+    public Maratonista atualizarMaratonista(Maratonista maratonista){
+        return maratonistaRepository.save(maratonista);
+    }
 }

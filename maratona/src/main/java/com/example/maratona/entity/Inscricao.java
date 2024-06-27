@@ -6,10 +6,11 @@ import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-
+@Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,6 +27,6 @@ public class Inscricao {
 
      @ManyToOne
     private Maratonista maratonista;
-     @OneToMany(mappedBy = "inscricoes")
-     private List<Circuito> circuitos;
+    @ManyToOne
+     private Circuito circuito;
 }

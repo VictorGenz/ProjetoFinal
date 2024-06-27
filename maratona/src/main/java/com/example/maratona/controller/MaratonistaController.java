@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("Maratonista")
+@RequestMapping("api/v1/maratonista")
 public class MaratonistaController {
     @Autowired
     MaratonistaService maratonistaService;
@@ -19,5 +19,21 @@ public class MaratonistaController {
     public Maratonista cadastrarMaratonista(@RequestBody Maratonista maratonista){
         return maratonistaService.salvarMaratonista(maratonista);
     }
+
+    @PostMapping("/excluir")
+    public void excluirMaratonista(Long id){
+          maratonistaService.excluirMaratonista(id);
+    }
+
+    @PostMapping("/buscar")
+    public Maratonista buscarMaratonista(Long id){
+        return maratonistaService.buscarMaratonista(id);
+    }
+
+    @PostMapping("/atualizar")
+    public Maratonista atualizarMaratonista(Maratonista maratonista){
+        return maratonistaService.atualizarMaratonista(maratonista);
+    }
+
 
 }

@@ -9,7 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-
+@Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,8 +23,8 @@ public class Circuito {
     private int distancia;
 
     private Categoria categoria;
-@ManyToOne
-    private Inscricao inscricoes;
+@OneToMany(mappedBy = "circuito")
+    private List<Inscricao> inscricoes;
 @ManyToOne
 private Maratona maratona;
 }

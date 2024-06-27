@@ -13,4 +13,17 @@ public class MaratonaService {
     public Maratona salvarMaratona(Maratona maratona){
        return maratonaRepository.save(maratona);
     }
+
+    public void excluirMaratona(Long id){
+        maratonaRepository.deleteById(id);
+    }
+
+    public Maratona buscarMaratona(Long id){
+        return maratonaRepository.findById(id).orElse(null);
+    }
+
+    public Maratona atualizarMaratona(Maratona maratona){
+        return maratonaRepository.save(maratona);
+    }
+
 }
